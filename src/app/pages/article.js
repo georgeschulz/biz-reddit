@@ -1,5 +1,9 @@
 import React from "react";
-import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import back from '../../assets/back.png'
+import './article.css'
+import logo from '../../assets/logo.png'
 
 function Article(props) {
     const { posts } = props;
@@ -11,7 +15,7 @@ function Article(props) {
         author,
         img
     } = posts[id];
-    
+
     function htmlDecode(input) {
         const paragraphs = input.split("\n");
         const parsedParagraphs = [];
@@ -25,12 +29,23 @@ function Article(props) {
     }
 
     return (
-        <article>
-            <h1>{header}</h1>
-            <p className="byline">Written by: {author}</p>
-            <img src={img} className="article-image" />
-            {htmlDecode(text)}
-        </article>
+        <div>
+            <header>
+                <Link to="/">
+                    <img src={back} className="back-icon" />
+                </Link>
+                <div className="header-logo-group">
+                    <img src={logo} className="logo" />
+                    <h1>Business Reddit</h1>
+                </div>
+            </header>
+            <article>
+                <h1>{header}</h1>
+                <p className="byline">Written by: {author}</p>
+                <img src={img} className="article-image" />
+                {htmlDecode(text)}
+            </article>
+        </div>
     )
 }
 

@@ -24,7 +24,7 @@ aside {
 }
 
 /*Text Default Styling*/
-header {
+.header-logo-group {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -49,17 +49,19 @@ h3 {
   font-size: 25px;
 }
 
-p {
+p, a {
   font-size: 18px;
+  text-decoration: none;
+  color: black;
 }
 
-a {
+a.hyperlink {
   color: #29D9BE;
   font-weight: bold;
   text-decoration: none;
 }
 
-a:hover {
+a.hyperlink:hover {
   text-decoration: underline;
 }
 
