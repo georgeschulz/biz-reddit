@@ -8,6 +8,32 @@
 
 .vote-column {
     width: 30%;
+    display: flex;
+    padding-top: 40px;
+}
+
+.vote-controls {
+    max-width: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.vote-controls img {
+    width: 30px;
+    height: 30px;
+}
+
+.vote-controls img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.vote-controls p {
+    width: 100%;
+    font-weight: bold;
 }
 
 .content-column img {

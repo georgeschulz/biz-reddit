@@ -1,12 +1,18 @@
 import React from 'react';
 import './Post.css'
+import upvote from '../../../assets/upvote.png'
+import downvote from '../../../assets/downvote.png'
 
 const Post = ({post}) => {
     const { header, votes, text, author, img } = post;
     return (
         <div className='post'>
             <div className='vote-column'>
-                <p>{votes}</p>
+                <div className="vote-controls">
+                    <img src={upvote} />
+                    <p>{votes}</p>
+                    <img src={downvote} />
+                </div>
             </div>
             <div className='content-column'>
                 <h2>{header}</h2>
