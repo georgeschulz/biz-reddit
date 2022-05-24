@@ -1,0 +1,15 @@
+.post {
+    background-color: #D9D9D9;
+    padding: 40px;
+    margin: 50px 0px;
+    border-radius: 3px;
+    display: flex;
+}
+
+.vote-column {
+    width: 30%;
+}
+
+.content-column img {
+    width: 100%;
+}
