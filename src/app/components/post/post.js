@@ -1,14 +1,15 @@
 import React from 'react';
 
-const Post = () => {
+const Post = ({post}) => {
+    const { header, votes, text, author, img } = post;
     return (
         <div className='post'>
             <div className='vote-column'>
-                <p>1001</p>
+                <p>{votes}</p>
             </div>
             <div className='content-column'>
-                <h2>Jeff Bezos Annouces Retirement</h2>
-                <p></p>
+                <h2>{header}</h2>
+                <p>{text.substring(0, 200)}... Read more.</p>
             </div>
         </div>
     )
