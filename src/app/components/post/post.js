@@ -3,7 +3,7 @@ import './Post.css'
 import upvote from '../../../assets/upvote.png'
 import downvote from '../../../assets/downvote.png'
 
-const Post = ({post}) => {
+const Post = ({ post }) => {
     const { header, votes, text, author, img } = post;
     return (
         <div className='post'>
