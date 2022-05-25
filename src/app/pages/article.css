@@ -14,6 +14,7 @@ article p {
     color: white;
     font-size: 30px;
     line-height: 1.8;
+    padding: 0em 1em;
 }
 
 p.byline {
@@ -26,9 +27,25 @@ p.byline {
     float: left;
     margin-top: 30px;
     width: 5%;
+    min-width: 50px;
 }
 
 .back-icon:hover {
     transform: scale(1.2);
     cursor: pointer;
+}
+
+@media only screen and (max-width: 500px) {
+    article h1 {
+        font-size: 25px;
+    }
+
+    article p {
+        font-size: 15px;
+        line-height: 1.8;
+    }
+    
+    p.byline {
+        font-size: 15px;
+    }
 }

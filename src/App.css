@@ -32,6 +32,12 @@ aside {
   padding: 30px 0px;
 }
 
+@media only screen and (max-width: 500px) {
+  .header-logo-group {
+    margin-right: 12%;
+  }
+}
+
 h1 {
   width: 100%;
   color: #29D9BE;

@@ -1,0 +1,29 @@
+.vote-toggler {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.vote-toggler img {
+    width: 60px;
+    height: 60px;
+    margin: 0px 10px;
+}
+
+.vote-toggler img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.vote-toggler p {
+    font-size: 35px;
+    font-weight: bold;
+    line-height: 0px;
+}
+
+@media only screen and (max-width: 500px) {
+    .vote-toggler {
+        margin: 10px 0px 20px 0px;
+    }
+}

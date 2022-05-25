@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import back from '../../assets/back.png'
 import './article.css'
 import logo from '../../assets/logo.png'
+import VoteToggler from "../components/voteToggler/VoteToggler.js";
 
 function Article(props) {
     const { posts } = props;
@@ -43,6 +44,7 @@ function Article(props) {
                 <h1>{header}</h1>
                 <p className="byline">Written by: {author}</p>
                 <img src={img} className="article-image" />
+                <VoteToggler votes={votes} />
                 {htmlDecode(text)}
             </article>
         </div>
