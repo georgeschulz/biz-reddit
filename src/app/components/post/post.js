@@ -8,7 +8,7 @@ const Post = ({ post }) => {
     const { id, header, votes, text, author, img } = post;
     return (
         <div className='post'>
-            <div className='vote-column'>
+            <div className='vote-column desktop-only'>
                 <div className="vote-controls">
                     <img src={upvote} />
                     <p>{votes}</p>

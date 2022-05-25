@@ -1,19 +1,20 @@
 .post {
     background-color: #D9D9D9;
     padding: 40px;
-    margin: 50px 0px;
+    margin: 0px 0px 50px 0px;
     border-radius: 3px;
     display: flex;
 }
 
 .vote-column {
     width: 30%;
+    min-width: 70px;
     display: flex;
     padding-top: 40px;
 }
 
 .vote-controls {
-    max-width: 100px;
+    max-width: 50px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -22,8 +23,8 @@
 }
 
 .vote-controls img {
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
 }
 
 .vote-controls img:hover {
@@ -38,4 +39,10 @@
 
 .content-column img {
     width: 100%;
+}
+
+@media only screen and (max-width: 500px) {
+    .vote-column {
+        width: 5px;
+    }
 }
