@@ -5,17 +5,22 @@ import back from '../../assets/back.png'
 import './article.css'
 import logo from '../../assets/logo.png'
 import VoteToggler from "../components/voteToggler/VoteToggler.js";
+import { useSelector } from "react-redux";
+import { selectPosts } from "../../features/contentSlice";
+import { useDispatch } from "react-redux";
 
 function Article(props) {
-    const { posts } = props;
+    const posts = useSelector(selectPosts)
     const { id } = useParams();
     const {
         header,
         votes,
         text,
         author,
-        img
+        img,
     } = posts[id];
+
+    const dispatch = useDispatch();
 
     function htmlDecode(input) {
         const paragraphs = input.split("\n");
@@ -44,7 +49,7 @@ function Article(props) {
                 <h1>{header}</h1>
                 <p className="byline">Written by: {author}</p>
                 <img src={img} className="article-image" />
-                <VoteToggler votes={votes} />
+                <VoteToggler votes={votes} id={id} />
                 {htmlDecode(text)}
             </article>
         </div>

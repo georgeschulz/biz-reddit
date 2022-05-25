@@ -5,8 +5,8 @@
     align-items: center;
 }
 
-.vote-toggler img {
-    width: 60px;
+.vote-icon {
+    width: 60px !important;
     height: 60px;
     margin: 0px 10px;
 }
