@@ -4,9 +4,12 @@ import logo from '../../assets/logo.png'
 import menu from '../../assets/menu.png'
 import Filters from '../components/filters/filters';
 import x from '../../assets/x.png'
+import { selectPosts } from '../../features/contentSlice';
+import { useSelector } from 'react-redux';
 
 function Feed(props) {
-    const { posts } = props;
+    const posts = useSelector(selectPosts)
+    console.log(posts)
     const [showModal, setShowModal] = useState(false);
 
     function toggleModal() {
@@ -16,7 +19,7 @@ function Feed(props) {
     return (
         <div>
             <header>
-                <img src={menu} className="mobile-only back-icon" onClick={toggleModal} />
+                <img src={menu} className="mobile-only back-icon" onClick={() => toggleModal} />
                 <div className='header-logo-group'>
                     <img src={logo} className="logo" />
                     <h1>Business Reddit</h1>
@@ -24,7 +27,7 @@ function Feed(props) {
             </header>
             <main>
                 <div className={showModal ? "show modal" : "hidden"}>
-                    <img src ={x} className="close-icon" onClick={toggleModal} />
+                    <img src ={x} className="close-icon" onClick={() => toggleModal} />
                     <Filters />
                 </div>
                 <aside className='desktop-only'>

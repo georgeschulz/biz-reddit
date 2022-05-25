@@ -1,18 +1,22 @@
 import React from 'react';
 import './Post.css'
-import upvote from '../../../assets/upvote.png'
-import downvote from '../../../assets/downvote.png'
+import upvoteIcon from '../../../assets/upvote.png'
+import downvoteIcon from '../../../assets/downvote.png'
 import { Link } from 'react-router-dom';
+import { upvote, downvote } from '../../../features/contentSlice';
+import { useDispatch } from 'react-redux';
 
 const Post = ({ post }) => {
     const { id, header, votes, text, author, img } = post;
+    const dispatch = useDispatch();
+
     return (
         <div className='post'>
             <div className='vote-column desktop-only'>
                 <div className="vote-controls">
-                    <img src={upvote} />
+                    <img src={upvoteIcon} onClick={() => dispatch(upvote({id: id}))} />
                     <p>{votes}</p>
-                    <img src={downvote} />
+                    <img src={downvoteIcon} onClick={() => dispatch(downvote({id: id}))} />
                 </div>
             </div>
             <Link to={`/post/${id}`}>
