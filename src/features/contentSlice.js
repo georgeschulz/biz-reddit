@@ -5,9 +5,9 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchContent = createAsyncThunk(
   'content/fetchContent',
   async (query, thunkAPI) => {
-    let search = query || 'tomato'
-    console.log(query)
-    const response = await fetch(`https://www.reddit.com/search.json?q=${search}`)
+    let urlWithEndpoint = `https://www.reddit.com/search.json?q=${query}`;
+    console.log(urlWithEndpoint)
+    const response = await fetch(urlWithEndpoint)
     const json = await response.json();
     return json;
   }

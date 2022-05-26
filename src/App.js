@@ -11,15 +11,18 @@ import Feed from './app/pages/feed';
 import placeholder from './assets/placeholder.jpeg'
 import Article from './app/pages/article';
 import { fetchContent } from './features/contentSlice';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectSelectedKeyword } from './features/filterSlice';
 
 function App() {
   const posts = [];
   const dispatch = useDispatch();
-
+  let keyword = useSelector(selectSelectedKeyword)
+ 
   useEffect(() => {
-    dispatch(fetchContent("business"))
-}, [])
+    console.log(keyword)
+    dispatch(fetchContent(keyword))
+}, [keyword])
   
   return (
     <div className="App">
