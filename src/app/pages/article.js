@@ -8,6 +8,7 @@ import VoteToggler from "../components/voteToggler/VoteToggler.js";
 import { useSelector } from "react-redux";
 import { selectPosts } from "../../features/contentSlice";
 import { useDispatch } from "react-redux";
+import htmlDecode from "../helpers/decodeHTML";
 
 function Article(props) {
     const posts = useSelector(selectPosts)
@@ -21,18 +22,6 @@ function Article(props) {
     } = posts[id];
 
     const dispatch = useDispatch();
-
-    function htmlDecode(input) {
-        const paragraphs = input.split("\n");
-        const parsedParagraphs = [];
-
-        paragraphs.forEach(paragraph => {
-            var doc = new DOMParser().parseFromString(paragraph, "text/html");
-            parsedParagraphs.push(doc.documentElement.textContent)
-        })
-
-        return parsedParagraphs.map(p => <p>{p}</p>);
-    }
 
     return (
         <div>

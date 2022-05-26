@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import logo from './assets/logo.png'
 import {
@@ -16,7 +16,11 @@ import { useDispatch } from 'react-redux';
 function App() {
   const posts = [];
   const dispatch = useDispatch();
-  console.log(dispatch(fetchContent("test")))
+
+  useEffect(() => {
+    dispatch(fetchContent("business"))
+}, [])
+  
   return (
     <div className="App">
       <div className='main-content-container'>

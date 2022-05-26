@@ -1,14 +1,24 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './Post.css'
 import upvoteIcon from '../../../assets/upvote.png'
 import downvoteIcon from '../../../assets/downvote.png'
 import { Link } from 'react-router-dom';
 import { upvote, downvote } from '../../../features/contentSlice';
 import { useDispatch } from 'react-redux';
+import specialDecode from '../../helpers/specialDecode';
 
 const Post = ({ post }) => {
-    const { id, header, votes, text, author, img } = post;
+    const { id, header, votes, text, author, img, hasImg } = post;
     const dispatch = useDispatch();
+    
+    
+
+    let image;
+    if(img !== null) {
+        image = (<img src={img} />)
+    } else {
+        image = null;
+    }
 
     return (
         <div className='post'>
@@ -21,9 +31,9 @@ const Post = ({ post }) => {
             </div>
             <Link to={`/post/${id}`}>
                 <div className='content-column'>
-                    <h2>{header}</h2>
-                    <p>{text.substring(0, 200)}... <a className="hyperlink" href="#">Read more.</a></p>
-                    <img src={img} />
+                    <h2>{specialDecode(header)}</h2>
+                    <p>{specialDecode(text).substring(0, 200)}... <a className="hyperlink" href="#">Read more.</a></p>
+                    {image}
                 </div>
             </Link>
         </div>
