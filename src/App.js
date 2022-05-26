@@ -10,10 +10,13 @@ import {
 import Feed from './app/pages/feed';
 import placeholder from './assets/placeholder.jpeg'
 import Article from './app/pages/article';
+import { fetchContent } from './features/contentSlice';
+import { useDispatch } from 'react-redux';
 
 function App() {
   const posts = [];
-
+  const dispatch = useDispatch();
+  console.log(dispatch(fetchContent("test")))
   return (
     <div className="App">
       <div className='main-content-container'>

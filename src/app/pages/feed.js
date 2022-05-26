@@ -9,7 +9,6 @@ import { useSelector } from 'react-redux';
 
 function Feed(props) {
     const posts = useSelector(selectPosts)
-    console.log(posts)
     const [showModal, setShowModal] = useState(false);
 
     function toggleModal() {
