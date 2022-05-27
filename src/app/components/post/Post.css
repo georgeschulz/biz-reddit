@@ -15,7 +15,6 @@
 }
 
 .vote-controls {
-    max-width: 50px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
