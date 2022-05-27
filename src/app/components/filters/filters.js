@@ -5,9 +5,12 @@ import { selectFilters } from "../../../features/filterSlice";
 import { useSelector } from "react-redux";
 import { updateKeyword } from "../../../features/filterSlice";
 import { useDispatch } from "react-redux";
+import { selectSortOptions } from "../../../features/sortSlice";
+import { updateSort } from "../../../features/sortSlice";
 
 function Filters() {
     const keywords = useSelector(selectFilters);
+    const options = useSelector(selectSortOptions)
     const dispatch = useDispatch();
 
     return (
@@ -23,9 +26,9 @@ function Filters() {
             <div className='nav-group'>
                 <h3><img src={filter} /> Filters</h3>
                 <ul className='bookmark-list'>
-                    <li>OP Only</li>
-                    <li>Funny</li>
-                    <li>Memes</li>
+                    {options.map(option => {
+                        return <li key={option.id} onClick={() => dispatch(updateSort({id: option.id}))}>{option.title}</li>
+                    })}
                 </ul>
             </div>
         </nav>

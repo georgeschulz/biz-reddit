@@ -13,16 +13,22 @@ import Article from './app/pages/article';
 import { fetchContent } from './features/contentSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectSelectedKeyword } from './features/filterSlice';
+import { selectSelectedSort } from './features/sortSlice';
 
 function App() {
   const posts = [];
   const dispatch = useDispatch();
   let keyword = useSelector(selectSelectedKeyword)
+  let sort = useSelector(selectSelectedSort)
  
   useEffect(() => {
-    console.log(keyword)
-    dispatch(fetchContent(keyword))
-}, [keyword])
+    dispatch(fetchContent(
+      {
+        filter: keyword,
+        sort: sort
+      }
+    ))
+}, [keyword, sort])
   
   return (
     <div className="App">

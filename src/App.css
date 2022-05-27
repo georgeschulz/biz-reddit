@@ -8,7 +8,7 @@
 
 .main-content-container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1000px;
 }
 
 main {
@@ -68,13 +68,13 @@ p, a {
   color: black;
 }
 
-p.hyperlink {
+span.hyperlink {
   color: #29D9BE;
   font-weight: bold;
   text-decoration: none;
 }
 
-p.hyperlink:hover {
+span.hyperlink:hover {
   text-decoration: underline;
 }
 

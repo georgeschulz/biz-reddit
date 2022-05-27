@@ -7,7 +7,7 @@ const LoadingPost = () => {
     return (
         <div className='post center'>
             <div className='content-column'>
-                <div class="spin"></div>
+                <div className="spin"></div>
             </div>
         </div>
     )

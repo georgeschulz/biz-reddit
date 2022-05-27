@@ -32,7 +32,7 @@ const Post = ({ post }) => {
             <Link to={`/post/${id}`}>
                 <div className='content-column'>
                     <h2>{specialDecode(header)}</h2>
-                    <p>{specialDecode(text).substring(0, 200)}... <p className="hyperlink" href="#">Read more.</p></p>
+                    <p>{specialDecode(text).substring(0, 200).trim()} {text.length > 0 ? "...": ""} {text.length > 0 ? <span className='hyperlink'>Read more</span> : ""}</p>
                     {image}
                 </div>
             </Link>
