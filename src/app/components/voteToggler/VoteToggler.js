@@ -6,15 +6,15 @@ import { useDispatch } from "react-redux";
 import { upvote, downvote } from '../../../features/contentSlice'
 
 function VoteToggler(props) {
-    const {votes, id} = props;
+    const {votes, id, isUp, isDown} = props;
     console.log(id)
     const dispatch = useDispatch()
 
     return (
         <div className="vote-toggler">
-            <img src={thumbsdown} className="vote-icon" onClick={() => dispatch(downvote({id: Number(id)}))} />
+            <div className={isDown ? "selected-background" : null}><img src={thumbsdown} className={isDown ? "vote-icon selected-icon" : "vote-icon"} onClick={() => dispatch(downvote({id: Number(id)}))} /></div>
             <p>{votes}</p>
-            <img src={thumbsup} className="vote-icon" onClick={() => dispatch(upvote({id: Number(id)}))}/>
+            <div className={isUp ? "selected-background" : null}><img src={thumbsup} className={isUp ? "vote-icon selected-icon" : "vote-icon"} onClick={() => dispatch(upvote({id: Number(id)}))}/></div>
         </div>
     )
 }

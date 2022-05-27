@@ -16,12 +16,29 @@ function Article(props) {
     const {
         header,
         votes,
+        originalVotes,
         text,
         author,
         img,
     } = posts[id];
 
     const dispatch = useDispatch();
+
+    let isUp = false;
+    let isDown = false;
+    console.log('votes: ' + votes)
+    console.log('original votes: ' + originalVotes)
+
+    if(votes > originalVotes) {
+        isUp = true;
+        isDown = false;
+    } else if(votes < originalVotes) {
+        isUp = false;
+        isDown = true;
+    } else {
+        isUp = false;
+        isDown = false;
+    }
 
     return (
         <div>
@@ -38,7 +55,7 @@ function Article(props) {
                 <h1>{header}</h1>
                 <p className="byline">Written by: {author}</p>
                 <img src={img} className="article-image" />
-                <VoteToggler votes={votes} id={id} />
+                <VoteToggler votes={votes} id={id} isUp={isUp} isDown={isDown} />
                 {htmlDecode(text)}
             </article>
         </div>
