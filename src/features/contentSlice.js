@@ -5,7 +5,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 export const fetchContent = createAsyncThunk(
   'content/fetchContent',
   async (query, thunkAPI) => {
-    let urlWithEndpoint = `https://www.reddit.com/search.json?q=${query}`;
+    let urlWithEndpoint = encodeURI(`https://www.reddit.com/search.json?q=${query}`);
     console.log(urlWithEndpoint)
     const response = await fetch(urlWithEndpoint)
     const json = await response.json();
@@ -72,5 +72,6 @@ const contentSlice = createSlice({
 const contentSliceReducer = contentSlice.reducer;
 
 export const selectPosts = state => state.content.posts;
+export const selectIsLoading = state => state.content.isLoading;
 export const { upvote, downvote } = contentSlice.actions;
 export default contentSliceReducer;

@@ -4,15 +4,24 @@ import logo from '../../assets/logo.png'
 import menu from '../../assets/menu.png'
 import Filters from '../components/filters/filters';
 import x from '../../assets/x.png'
-import { selectPosts } from '../../features/contentSlice';
+import { selectIsLoading, selectPosts } from '../../features/contentSlice';
 import { useSelector } from 'react-redux';
+import LoadingPost from '../components/post/loadingPost';
 
 function Feed(props) {
     const posts = useSelector(selectPosts)
+    const isLoading = useSelector(selectIsLoading)
     const [showModal, setShowModal] = useState(false);
 
     function toggleModal() {
         setShowModal(!showModal);
+    }
+
+    let feed; 
+    if(isLoading) {
+        feed = <div><LoadingPost /><LoadingPost /><LoadingPost /><LoadingPost /><LoadingPost /><LoadingPost /></div>
+    } else {
+        feed = posts.map(post => <Post key={post.id} post={post} />)
     }
 
     return (
@@ -27,13 +36,13 @@ function Feed(props) {
             <main>
                 <div className={showModal ? "show modal" : "hidden"}>
                     <img src ={x} className="close-icon" onClick={() => toggleModal} />
-                    <Filters />
+                    <Filters /> 
                 </div>
                 <aside className='desktop-only'>
                     <Filters />
                 </aside>
                 <div className='feed'>
-                    {posts.map(post => <Post key={post.id} post={post} />)}
+                    {feed}
                 </div>
             </main>
         </div>
