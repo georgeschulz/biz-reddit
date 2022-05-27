@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect } from 'react';
 import './Post.css'
 import upvoteIcon from '../../../assets/upvote.png'
 import downvoteIcon from '../../../assets/downvote.png'
@@ -8,13 +8,13 @@ import { useDispatch } from 'react-redux';
 import specialDecode from '../../helpers/specialDecode';
 
 const Post = ({ post }) => {
-    const { id, header, votes, text, author, img, hasImg } = post;
+    const { id, header, votes, text, author, img, hasImg, originalVotes } = post;
     const dispatch = useDispatch();
-    
-    
+
+
 
     let image;
-    if(img !== null) {
+    if (img !== null) {
         image = (<img src={img} />)
     } else {
         image = null;
@@ -24,15 +24,15 @@ const Post = ({ post }) => {
         <div className='post'>
             <div className='vote-column desktop-only'>
                 <div className="vote-controls">
-                    <img src={upvoteIcon} onClick={() => dispatch(upvote({id: id}))} />
+                    <img src={upvoteIcon} className={votes > originalVotes ? "selected-arrow" : "unselected-arrow"} onClick={() => dispatch(upvote({ id: id }))} />
                     <p>{votes}</p>
-                    <img src={downvoteIcon} onClick={() => dispatch(downvote({id: id}))} />
+                    <img src={downvoteIcon} className={votes < originalVotes ? "selected-arrow" : "unselected-arrow"} onClick={() => dispatch(downvote({ id: id }))} />
                 </div>
             </div>
             <Link to={`/post/${id}`}>
                 <div className='content-column'>
                     <h2>{specialDecode(header)}</h2>
-                    <p>{specialDecode(text).substring(0, 200).trim()} {text.length > 0 ? "...": ""} {text.length > 0 ? <span className='hyperlink'>Read more</span> : ""}</p>
+                    <p>{specialDecode(text).substring(0, 200).trim()} {text.length > 0 ? "..." : ""} {text.length > 0 ? <span className='hyperlink'>Read more</span> : ""}</p>
                     {image}
                 </div>
             </Link>

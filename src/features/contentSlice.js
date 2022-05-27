@@ -52,6 +52,7 @@ const contentSlice = createSlice({
       state.failedToLoad = false;
       state.posts = [];
       action.payload.data.children.forEach((child, i) => {
+        console.log(child)
         let post = {
           id: i,
           header: child.data.title,
@@ -61,7 +62,7 @@ const contentSlice = createSlice({
           author: child.data.author || "None listed",
           img: child.data.thumbnail === "self" ? null : child.data.thumbnail,
           hasImg: child.data.thumbnail ? true : false,
-          sub: child.data.url
+          url: child.data.url
         }
         state.posts.push(post)
       })

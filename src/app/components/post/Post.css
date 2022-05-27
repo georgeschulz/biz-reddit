@@ -24,8 +24,18 @@
 }
 
 .vote-controls img {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
+}
+
+.selected-arrow {
+    transform: scale(1.6);
+    filter: grayscale(0.8);
+}
+
+.vote-controls img.selected-arrow:hover {
+    transform: scale(1.6) !important;
+    cursor: auto;
 }
 
 .vote-controls img:hover {

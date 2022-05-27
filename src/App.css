@@ -62,16 +62,23 @@ h3 {
   display: flex;
 }
 
-p, a {
+p,
+a {
   font-size: 18px;
   text-decoration: none;
   color: black;
 }
 
-span.hyperlink {
+span.hyperlink,
+a.hyperlink {
   color: #29D9BE;
   font-weight: bold;
   text-decoration: none;
+}
+
+
+a.hyperlink {
+  text-align: center;
 }
 
 span.hyperlink:hover {
@@ -113,6 +120,7 @@ li:hover {
   .desktop-only {
     display: none !important;
   }
+
   .mobile-only {
     display: block !important;
   }

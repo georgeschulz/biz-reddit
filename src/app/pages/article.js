@@ -20,6 +20,7 @@ function Article(props) {
         text,
         author,
         img,
+        url
     } = posts[id];
 
     const dispatch = useDispatch();
@@ -29,10 +30,10 @@ function Article(props) {
     console.log('votes: ' + votes)
     console.log('original votes: ' + originalVotes)
 
-    if(votes > originalVotes) {
+    if (votes > originalVotes) {
         isUp = true;
         isDown = false;
-    } else if(votes < originalVotes) {
+    } else if (votes < originalVotes) {
         isUp = false;
         isDown = true;
     } else {
@@ -56,6 +57,7 @@ function Article(props) {
                 <p className="byline">Written by: {author}</p>
                 <img src={img} className="article-image" />
                 <VoteToggler votes={votes} id={id} isUp={isUp} isDown={isDown} />
+                <a target="_blank" className="hyperlink" href={url}>{url}</a>
                 {htmlDecode(text)}
             </article>
         </div>
