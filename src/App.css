@@ -4,11 +4,12 @@
   font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: center;
+  box-sizing: border-box;
 }
 
 .main-content-container {
   width: 100%;
-  max-width: 1000px;
+  max-width: 1200px;
 }
 
 main {
@@ -22,7 +23,8 @@ aside {
 
 .feed {
   padding: 0% 5%;
-  width: 100%;
+  width: 90%;
+  box-sizing: border-box;
 }
 
 /*Text Default Styling*/

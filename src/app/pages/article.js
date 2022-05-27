@@ -27,8 +27,6 @@ function Article(props) {
 
     let isUp = false;
     let isDown = false;
-    console.log('votes: ' + votes)
-    console.log('original votes: ' + originalVotes)
 
     if (votes > originalVotes) {
         isUp = true;

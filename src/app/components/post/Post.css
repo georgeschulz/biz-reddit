@@ -4,7 +4,7 @@
     margin: 0px 0px 50px 0px;
     border-radius: 3px;
     display: flex;
-    min-width: 100%;
+    min-width: 90%;
 }
 
 .vote-column {

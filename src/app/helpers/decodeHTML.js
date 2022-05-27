@@ -7,7 +7,7 @@ export function htmlDecode(input) {
         parsedParagraphs.push(doc.documentElement.textContent)
     })
 
-    return parsedParagraphs.map(p => <p>{p}</p>);
+    return parsedParagraphs.map((p, i) => <p key={'article-paragraph-' + i}>{p}</p>);
 }
 
 export default htmlDecode;

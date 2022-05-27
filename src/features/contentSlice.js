@@ -6,7 +6,6 @@ export const fetchContent = createAsyncThunk(
   'content/fetchContent',
   async (query, thunkAPI) => {
     let urlWithEndpoint = encodeURI(`https://www.reddit.com/search.json?q=${query.filter}${query.sort}`);
-    console.log(urlWithEndpoint)
     const response = await fetch(urlWithEndpoint)
     const json = await response.json();
     return json;
@@ -52,7 +51,6 @@ const contentSlice = createSlice({
       state.failedToLoad = false;
       state.posts = [];
       action.payload.data.children.forEach((child, i) => {
-        console.log(child)
         let post = {
           id: i,
           header: child.data.title,

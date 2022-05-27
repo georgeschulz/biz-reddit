@@ -7,7 +7,6 @@ import { upvote, downvote } from '../../../features/contentSlice'
 
 function VoteToggler(props) {
     const {votes, id, isUp, isDown} = props;
-    console.log(id)
     const dispatch = useDispatch()
 
     return (
