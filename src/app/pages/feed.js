@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Post from '../components/post/Post.js'
+import Post from '../components/post/post.js'
 import logo from '../../assets/logo.png'
 import menu from '../../assets/menu.png'
 import Filters from '../components/filters/filters.js';
