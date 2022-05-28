@@ -24,5 +24,6 @@ const sortSliceReducer = sortSlice.reducer;
 
 export const selectSortOptions = state => state.sort.options;
 export const selectSelectedSort = state => state.sort.selectedOption.param;
+export const selectSelectedSortId = state => state.sort.selectedOption.id;
 export const { updateSort } = sortSlice.actions;
 export default sortSliceReducer;

@@ -11,7 +11,7 @@ const filterSlice = createSlice({
             {id: 5, title: "Crypto", query: "crypto OR cyrptocurrency OR bitcoin OR ethereum OR NFTs"},
             {id: 6, title: "Personal Finance", query: "Dave Ramsey OR personal finance OR saving money OR retirement"}
           ],
-          selectedKeyword: {id: 0, title: "Business", query: "biz news"},
+          selectedKeyword: {id: 1, title: "Business", query: "biz news"},
     },
     reducers: {
         updateKeyword: (state, action) => {
@@ -25,5 +25,6 @@ const filterSliceReducer = filterSlice.reducer;
 
 export const selectFilters = state => state.filter.keywords;
 export const selectSelectedKeyword = state => state.filter.selectedKeyword.query;
+export const selectSelectedKeywordId = state => state.filter.selectedKeyword.id;
 export const { updateKeyword } = filterSlice.actions;
 export default filterSliceReducer;
