@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import placeholder from '../assets/placeholder.jpeg'
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const fetchContent = createAsyncThunk(

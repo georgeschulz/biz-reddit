@@ -11,9 +11,9 @@ function VoteToggler(props) {
 
     return (
         <div className="vote-toggler">
-            <div className={isDown ? "selected-background" : null}><img src={thumbsdown} className={isDown ? "vote-icon selected-icon" : "vote-icon"} onClick={() => dispatch(downvote({id: Number(id)}))} /></div>
+            <div className={isDown ? "selected-background" : null}><img alt="downvote button" src={thumbsdown} className={isDown ? "vote-icon selected-icon" : "vote-icon"} onClick={() => dispatch(downvote({id: Number(id)}))} /></div>
             <p>{votes}</p>
-            <div className={isUp ? "selected-background" : null}><img src={thumbsup} className={isUp ? "vote-icon selected-icon" : "vote-icon"} onClick={() => dispatch(upvote({id: Number(id)}))}/></div>
+            <div className={isUp ? "selected-background" : null}><img alt="upvote button" src={thumbsup} className={isUp ? "vote-icon selected-icon" : "vote-icon"} onClick={() => dispatch(upvote({id: Number(id)}))}/></div>
         </div>
     )
 }

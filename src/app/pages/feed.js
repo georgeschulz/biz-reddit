@@ -27,15 +27,15 @@ function Feed(props) {
     return (
         <div>
             <header>
-                <img src={menu} className="mobile-only back-icon" onClick={() => toggleModal()} />
+                <img alt="menu button" src={menu} className="mobile-only back-icon" onClick={() => toggleModal()} />
                 <div className='header-logo-group'>
-                    <img src={logo} className="logo" />
+                    <img alt="biz reddit logo" src={logo} className="logo" />
                     <h1>Business Reddit</h1>
                 </div>
             </header>
             <main>
                 <div className={showModal ? "show modal" : "hidden"}>
-                    <img src ={x} className="close-icon" onClick={() => toggleModal()} />
+                    <img alt="close popup button" src ={x} className="close-icon" onClick={() => toggleModal()} />
                     <Filters /> 
                 </div>
                 <aside className='desktop-only'>

@@ -18,7 +18,7 @@ function Filters() {
     return (
         <nav>
             <div className="nav-group">
-                <h3><img src={bookmark} /> Bookmarks</h3>
+                <h3><img alt="" src={bookmark} /> Bookmarks</h3>
                 <ul className='bookmark-list'>
                     {keywords.map(keyword => {
                         return (
@@ -33,7 +33,7 @@ function Filters() {
                 </ul>
             </div>
             <div className='nav-group'>
-                <h3><img src={filter} /> Filters</h3>
+                <h3><img alt="" src={filter} /> Filters</h3>
                 <ul className='bookmark-list'>
                     {options.map(option => {
                         return (

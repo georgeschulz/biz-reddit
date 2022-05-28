@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Post.css'
 import upvoteIcon from '../../../assets/upvote.png'
 import downvoteIcon from '../../../assets/downvote.png'
@@ -8,14 +8,14 @@ import { useDispatch } from 'react-redux';
 import specialDecode from '../../helpers/specialDecode.js';
 
 const Post = ({ post }) => {
-    const { id, header, votes, text, author, img, hasImg, originalVotes } = post;
+    const { id, header, votes, text, img, originalVotes } = post;
     const dispatch = useDispatch();
 
 
 
     let image;
     if (img !== null) {
-        image = (<img src={img} />)
+        image = (<img alt="" src={img} />)
     } else {
         image = null;
     }
@@ -24,9 +24,9 @@ const Post = ({ post }) => {
         <div className='post'>
             <div className='vote-column desktop-only'>
                 <div className="vote-controls">
-                    <img src={upvoteIcon} className={votes > originalVotes ? "selected-arrow" : "unselected-arrow"} onClick={() => dispatch(upvote({ id: id }))} />
+                    <img alt="" src={upvoteIcon} className={votes > originalVotes ? "selected-arrow" : "unselected-arrow"} onClick={() => dispatch(upvote({ id: id }))} />
                     <p>{votes}</p>
-                    <img src={downvoteIcon} className={votes < originalVotes ? "selected-arrow" : "unselected-arrow"} onClick={() => dispatch(downvote({ id: id }))} />
+                    <img alt="" src={downvoteIcon} className={votes < originalVotes ? "selected-arrow" : "unselected-arrow"} onClick={() => dispatch(downvote({ id: id }))} />
                 </div>
             </div>
             <Link to={`/post/${id}`}>

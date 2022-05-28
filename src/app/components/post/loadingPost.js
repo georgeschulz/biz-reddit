@@ -1,7 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './Post.css'
-import upvoteIcon from '../../../assets/upvote.png'
-import downvoteIcon from '../../../assets/downvote.png'
 
 const LoadingPost = () => {
     return (

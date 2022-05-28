@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import logo from './assets/logo.png'
 import {
   BrowserRouter,
   Routes,
-  Route,
-  Link,
+  Route
 } from "react-router-dom";
 import Feed from './app/pages/feed.js';
-import placeholder from './assets/placeholder.jpeg'
 import Article from './app/pages/article.js'
 import { fetchContent } from './features/contentSlice.js';
 import { useDispatch, useSelector } from 'react-redux';
@@ -28,7 +25,7 @@ function App() {
         sort: sort
       }
     ))
-}, [keyword, sort])
+}, [keyword, sort, dispatch])
   
   return (
     <div className="App">

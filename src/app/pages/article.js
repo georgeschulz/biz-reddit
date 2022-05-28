@@ -7,7 +7,6 @@ import logo from '../../assets/logo.png'
 import VoteToggler from "../components/voteToggler/VoteToggler.js";
 import { useSelector } from "react-redux";
 import { selectPosts } from "../../features/contentSlice.js";
-import { useDispatch } from "react-redux";
 import htmlDecode from "../helpers/decodeHTML.js";
 
 function Article(props) {
@@ -22,8 +21,6 @@ function Article(props) {
         img,
         url
     } = posts[id];
-
-    const dispatch = useDispatch();
 
     let isUp = false;
     let isDown = false;
@@ -43,19 +40,19 @@ function Article(props) {
         <div>
             <header>
                 <Link to="/">
-                    <img src={back} className="back-icon" />
+                    <img alt="back button" src={back} className="back-icon" />
                 </Link>
                 <div className="header-logo-group">
-                    <img src={logo} className="logo" />
+                    <img alt="biz reddit logo" src={logo} className="logo" />
                     <h1>Business Reddit</h1>
                 </div>
             </header>
             <article>
                 <h1>{header}</h1>
                 <p className="byline">Written by: {author}</p>
-                <img src={img} className="article-image" />
+                <img alt="article" src={img} className="article-image" />
                 <VoteToggler votes={votes} id={id} isUp={isUp} isDown={isDown} />
-                <a target="_blank" className="hyperlink" href={url}>{url}</a>
+                <a target="_blank" rel="noreferrer" className="hyperlink" href={url}>{url}</a>
                 {htmlDecode(text)}
             </article>
         </div>
