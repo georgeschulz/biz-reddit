@@ -7,9 +7,8 @@ const sortSlice = createSlice({
             {id: 1, title: "Popular", param: "&sort=top"},
             {id: 2, title: "Relevance", param: "&sort=relevance"},
             {id: 3, title: "Hot", param: "&sort=hot"},
-            {id: 4, title: "Popular", param: "&sort=top"},
-            {id: 5, title: "New", param: "&sort=new"},
-            {id: 6, title: "Most Comments", param: "&sort=comments"}
+            {id: 4, title: "New", param: "&sort=new"},
+            {id: 5, title: "Most Comments", param: "&sort=comments"}
         ],
         selectedOption: {id: 2, title: "Relevance", param: "&sort=relevance"}
     },
