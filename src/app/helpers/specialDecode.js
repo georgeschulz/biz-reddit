@@ -1,7 +1,5 @@
 export function specialDecode(input) {
-    var doc =  new DOMParser().parseFromString(input, "text/html")
-    let text = doc.documentElement.textContent;
-    let noAmp = text.replace("amp;", "")
+    let noAmp = input.replace("amp;", "")
     return noAmp;
 }
 

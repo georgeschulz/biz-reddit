@@ -7,13 +7,13 @@ import {
   Route,
   Link,
 } from "react-router-dom";
-import Feed from './app/pages/feed';
+import Feed from './app/pages/feed.js';
 import placeholder from './assets/placeholder.jpeg'
-import Article from './app/pages/article';
-import { fetchContent } from './features/contentSlice';
+import Article from './app/pages/article.js'
+import { fetchContent } from './features/contentSlice.js';
 import { useDispatch, useSelector } from 'react-redux';
-import { selectSelectedKeyword } from './features/filterSlice';
-import { selectSelectedSort } from './features/sortSlice';
+import { selectSelectedKeyword } from './features/filterSlice.js';
+import { selectSelectedSort } from './features/sortSlice.js';
 
 function App() {
   const posts = [];

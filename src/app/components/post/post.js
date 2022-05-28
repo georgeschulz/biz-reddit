@@ -3,9 +3,9 @@ import './Post.css'
 import upvoteIcon from '../../../assets/upvote.png'
 import downvoteIcon from '../../../assets/downvote.png'
 import { Link } from 'react-router-dom';
-import { upvote, downvote } from '../../../features/contentSlice';
+import { upvote, downvote } from '../../../features/contentSlice.js';
 import { useDispatch } from 'react-redux';
-import specialDecode from '../../helpers/specialDecode';
+import specialDecode from '../../helpers/specialDecode.js';
 
 const Post = ({ post }) => {
     const { id, header, votes, text, author, img, hasImg, originalVotes } = post;

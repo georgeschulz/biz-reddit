@@ -6,9 +6,9 @@ import './article.css'
 import logo from '../../assets/logo.png'
 import VoteToggler from "../components/voteToggler/VoteToggler.js";
 import { useSelector } from "react-redux";
-import { selectPosts } from "../../features/contentSlice";
+import { selectPosts } from "../../features/contentSlice.js";
 import { useDispatch } from "react-redux";
-import htmlDecode from "../helpers/decodeHTML";
+import htmlDecode from "../helpers/decodeHTML.js";
 
 function Article(props) {
     const posts = useSelector(selectPosts)

@@ -3,7 +3,7 @@ import thumbsup from '../../../assets/thumbsup.png'
 import thumbsdown from '../../../assets/thumbsdown.png'
 import './VoteToggler.css'
 import { useDispatch } from "react-redux";
-import { upvote, downvote } from '../../../features/contentSlice'
+import { upvote, downvote } from '../../../features/contentSlice.js'
 
 function VoteToggler(props) {
     const {votes, id, isUp, isDown} = props;

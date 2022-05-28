@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import Post from '../components/post/Post'
+import Post from '../components/post/Post.js'
 import logo from '../../assets/logo.png'
 import menu from '../../assets/menu.png'
-import Filters from '../components/filters/filters';
+import Filters from '../components/filters/filters.js';
 import x from '../../assets/x.png'
-import { selectIsLoading, selectPosts } from '../../features/contentSlice';
+import { selectIsLoading, selectPosts } from '../../features/contentSlice.js';
 import { useSelector } from 'react-redux';
-import LoadingPost from '../components/post/loadingPost';
+import LoadingPost from '../components/post/loadingPost.js';
 
 function Feed(props) {
     const posts = useSelector(selectPosts)

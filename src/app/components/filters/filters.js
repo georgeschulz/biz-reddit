@@ -1,12 +1,12 @@
 import React from "react";
 import bookmark from '../../../assets/bookmark.png'
 import filter from '../../../assets/filter.png'
-import { selectFilters, selectSelectedKeywordId } from "../../../features/filterSlice";
+import { selectFilters, selectSelectedKeywordId } from "../../../features/filterSlice.js";
 import { useSelector } from "react-redux";
-import { updateKeyword } from "../../../features/filterSlice";
+import { updateKeyword } from "../../../features/filterSlice.js";
 import { useDispatch } from "react-redux";
-import { selectSortOptions, selectSelectedSortId } from "../../../features/sortSlice";
-import { updateSort } from "../../../features/sortSlice";
+import { selectSortOptions, selectSelectedSortId } from "../../../features/sortSlice.js";
+import { updateSort } from "../../../features/sortSlice.js";
 
 function Filters() {
     const keywords = useSelector(selectFilters);
